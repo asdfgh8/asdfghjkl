@@ -1,83 +1,231 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Гаражний розпродаж</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Веб-Аграрій</title>
  <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" type="text/css" href="./fonts.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+        @media (min-width: 768px) {
+            .navbar-container {
+                position: sticky;
+                top: 0;
+                overflow-y: auto;
+                height: 100vh;
+            }
+            .navbar-container .navbar {
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                height: 100%;
+            }
+            .navbar-container .navbar-collapse {
+                align-items: flex-start;
+            }
+            .navbar-container .nav {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+            .navbar-container .navbar-nav {
+                flex-direction: column !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<!-- Верхня панель -->
-<header>
-<nav class="navbar navbar-fixed-top navbar-expand-lg">
-        <div class="navbar-brand">
-            <span class="navbar-logo">
-                    <img src="./img/logo.svg" alt="Logo" style="height: 3.8rem;">
-            </span>
-          </div>
-<!-- Верхнє меню згорнене в "гамбургер" -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15" aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse  justify-content-end" id="navbarSupportedContent15">
-            <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link link text-white text-center text-uppercase mx-2 px-4" href="#">Про нас</a></li>
-                </li><li class="nav-item"><a class="nav-link link text-white text-center text-uppercase mx-2 px-4" href="#">Кошик</a>
-                </li><li class="nav-item"><a class="nav-link link text-white text-center text-uppercase mx-2 px-4" href="#">Sign in</a>
-                </li>                   
-            </ul>
-        </div>
-    </nav>
-</header>
-<section>
+
+<main>
+<div class="container-fluid">
+      <div class="row">
+            <div class="col-md-8 col-lg-10 content-container" style="background-color: #e3f2fd">
+<section class="row">
     <div class="elem">
         <img src="" alt="" width="150" height="200px">
-        <p class="nazva"></p>
-        <p class="categorie">Насіння сонячника</p>
-        <p class="price">250 грн.</p>
-        <p></p>
+        <p class="nazva">Насіння кукурудзи ДК Велес</p>
+        <p class="categorie">Посівний матеріал</p>
+        <p class="price"><span id="prce">700</span> грн/міш.</p>
+        <p class="opys">Гібрид кукурудзи ДК Велес - це середньорання кукурудза з ФАО 270. Характеризується стійкістю до посушливих умов регіонів та холоду, високою врожайністю. Кукурудза може досягати висоти 230-240 см. Качан при цьому кріпиться на висоті 85-95 сантиметрів.</p>
     </div>
     <div class="elem">
         <img src="" alt="" width="150" height="200px">
-        <p class="nazva"></p>
-        <p class="categorie">Насіння кукурудзи</p>
-        <p class="price">140 грн.</p>
-        <p></p>
+        <p class="nazva">Буряк столовий Бордо</p>
+        <p class="categorie">Посівний матеріал</p>
+        <p class="price"><span id="prce">150</span> грн/кг</p>
+        <p class="opys">Буряк середньостиглого сорту. Коренеплоди округлої форми, їх середня маса 250 - 500 г. Вибагливий до родючості і вологості ґрунту. Сходи не переносять заморозків. При догляді за посівами головне ― боротьба зі шкідниками й буp'янами протягом усього часу.</p>
     </div>
     <div class="elem">
         <img src="" alt="" width="150" height="200px">
-        <p class="nazva"></p>
-        <p class="categorie">Гербіциди</p>
-        <p class="price">180 грн.</p>
-        <p></p>
+        <p class="nazva">Соняшник ЛГ5485</p>
+        <p class="categorie">Посівний матеріал</p>
+        <p class="price"><span id="prce">1700</span> грн/міш.</p>
+        <p class="opys">Вробник Лімагрейн. Мішок 150 тис. насінин. Середня висота рослини : 160 см. Не рекомендований для лісостепу та степу. Високоврожайний і стабільний з високим вмістом олії. Стійкий до нових рас несправжньої борошнистої роси.</p>
         </div>
+<div class="elem">
+        <img src="" alt="" width="200" height="200px">
+        <p class="nazva">Картопля Арія</p>
+        <p class="categorie">Посівний матеріал</p>
+        <p class="price"><span id="prce">50</span> грн/кг</p>
+        <p class="opys">Ранній сорт картоплі столового призначення. Квітки червоно-фіолетові. Бульби овальної форми, рожевого кольору. Містить 15,3% крохмалю. Урожайність на 40-45-й день після сходів становить 22 т/га. Висока польова стійкість проти вірусних хвороб.</p>
+    </div>
+<div class="elem">
+        <img src="" alt="" width="150" height="200px">
+        <p class="nazva">Насіння озимої пшениці Скаген</p>
+        <p class="categorie">Посівний матеріал</p>
+        <p class="price"><span id="prce">20</span> грн/кг</p>
+        <p class="opys">Середньопізній сорт озимої пшениці, має дуже високий потенціал продуктивності (100 ц/га і більше). Безостий сорт. Висота рослини: 87-91 см. Висока посухостійкість та морозостійкість. Строки висіву: початок вересня – кінець жовтня.</p>
+    </div>
     <div class="elem">
         <img src="" alt="" width="150" height="200px">
-        <p class="nazva"></p>
-        <p class="categorie">Фунгіциди</p>
-        <p class="price">185 грн.</p>
-        <p></p>
+        <p class="nazva">Гербіцид Syngenta Аксіал</p>
+        <p class="categorie">Захист рослин</p>
+        <p class="price"><span id="prce">800</span> грн/л</p>
+        <p class="opys">Ефективний проти мітлиці, видів вівсюга та пажитниці. Оптимальна температура застосування — від +10 °С до +25 °С. Не рекомендується використовувати препарат при різких коливаннях температури протягом дня.</p>
+    </div>
+<div class="elem">
+        <img src="" alt="" width="150" height="200px">
+        <p class="nazva">Гербіцид Раундап</p>
+        <p class="categorie">Захист рослин</p>
+        <p class="price"><span id="prce">400</span> грн/л</p>
+        <p class="opys">Засіб повністю знищує однорічні та багаторічні, злакові та дводольні бур'яни. Препарат Раундап швидко розчиняється під дією мікроорганізмів як в грунті, так і у воді. 20-40мл препарату на 3-4л води (для обробки однієї сотки).</p>
+    </div>
+<div class="elem">
+        <img src="" alt="" width="150" height="200px">
+        <p class="nazva">Квадріс 250 SC</p>
+        <p class="categorie">Захист рослин</p>
+        <p class="price"><span id="prce">1800</span> грн/л</p>
+        <p class="opys">Фунгіцид із нового класу препаратів — стробілуринів. Захищає овочеві культури від усіх основних хвороб: борошнистої роси, фітофторозу, макроспоріозу, несправжньої борошнистої роси, плямистостей та ін. Нетоксичний для бджіл, безпечний для користувача й довкілля.</p>
+    </div>
+<div class="elem">
+        <img src="" alt="" width="150" height="200px">
+        <p class="nazva">Фунгіцид Ридоміл Голд</p>
+        <p class="categorie">Захист рослин</p>
+        <p class="price"><span id="prce">220</span> грн/кг</p>
+        <p class="opys">Виробник - Syngenta. Є провідним фунгіцидом для боротьби з важкими захворюваннями, викликаними грибковими шкідниками. Забезпечує надійний захист від хвороб навіть за несприятливих погодних умов. Профілактична та лікувальна дія. Захист нового приросту і бульб.</p>
+    </div>
+<div class="elem">
+        <img src="" alt="" width="150" height="200px">
+        <p class="nazva">Інсектицид DEFENDA Синерид</p>
+        <p class="categorie">Захист рослин</p>
+        <p class="price"><span id="prce">700</span> грн/л</p>
+        <p class="opys">Синерид (аналог інсектициду Біскайя) застосовується для контролю широкого спектру рівнокрилих, жорсткокрилих та лускокрилих шкідників в посівах ріпаку та соняшнику. Не змивається опадами. Норма застосування л/га: 0,3 – 0,4. Форма препарату: масляна дисперсія (м.д.).</p>
     </div>
     <div class="elem">
         <img src="" alt="" width="200" height="200px">
-        <p class="nazva"></p>
-        <p class="categorie">Насіння пшениці</p>
-        <p class="price">90 грн.</p>
-        <p></p>
-    </div>
-    <div class="elem">
-        <img src="" alt="" width="200" height="200px">
-        <p class="nazva"></p>
+        <p class="nazva">Секатор GREENMILL GR6202</p>
         <p class="categorie">Інструменти для саду</p>
-        <p class="price">15грн.</p>
-        <p></p>
+        <p class="price"><span id="prce">180</span> грн</p>
+        <p class="opys">Матеріал леза - високоякісна, загартована сталь. Діаметр зрізу - 15 мм. Матеріал ручки - високоміцний алюмінієвий сплав
+. Ручки прогумовані.</p>
+    </div>
+<div class="elem">
+        <img src="" alt="" width="200" height="200px">
+        <p class="nazva">Агроволокно Agrolife</p>
+        <p class="categorie">Інструменти для саду</p>
+        <p class="price"><span id="prce">250</span> грн/рулон</p>
+        <p class="opys">Розмір рулона - 1,6 Х 10 м. Сонячне світло, волога і повітря чудово проходять крізь нього. Полив рослин можна здійснювати прямо через волокно. Запобігає пересиханню ґрунту, захищає від бур'янів.</p>
+    </div>
+<div class="elem">
+        <img src="" alt="" width="200" height="200px">
+        <p class="nazva">Акумуляторний обприскувач Foresta</p>
+        <p class="categorie">Інструменти для саду</p>
+        <p class="price"><span id="prce">1000</span> грн.</p>
+        <p class="opys">З баком на 12 літрів здатний працювати 5 годин без перерви завдяки акумулятору ємністю 8 А/год. З його допомогою. У комплекті йдуть 5 різних  насадок для розпилення рідини, що дозволяє підібрати оптимальний режим обприскування рослин.</p>
+    </div>
+<div class="elem">
+        <img src="" alt="" width="200" height="200px">
+        <p class="nazva">Лійка оцинкована</p>
+        <p class="categorie">Інструменти для саду</p>
+        <p class="price"><span id="prce">190</span> грн</p>
+        <p class="opys">Об'єм - 10 л, зі знімним розсіювачем. Зручна і легка. Виготовлена з оцинкованої сталі.</p>
+    </div>
+<div class="elem">
+        <img src="" alt="" width="200" height="200px">
+        <p class="nazva">Граблі віялові</p>
+        <p class="categorie">Інструменти для саду</p>
+        <p class="price"><span id="prce">150</span> грн/л</p>
+        <p class="opys">Граблі мають 15 круглих, сплюснутих на кінцях зубів, алюмінієвий держак завдовжки 1,5 м з гумовою ручкою на кінці. Призначені для збору опалого листя, зрізаних гілок, бур'янів, садового сміття. </p>
     </div>
     </section>
+
+
+<section class="row">
+<div class="row calculators" style="display: block"><div class="col-md-12"><h2>Універсальний</h2><div class="calc-form calc3"><p>За допомогою даного калькулятора ви зможете: знаючи площу, м.кв. - визначити кількість необхідного насіння в гр. і шт .; знаючи кількість насіння в гр. або шт. - визначити кількість насіння в шт. або гр. і відповідну площу м.кв.</p><div class="row"><div class="col-md-6"><div class="calc-item"><div id="culture-block_ovosh"><label for="culture">Виберіть культуру</label><div class="calc-select"><select id="culture" name="culture"><option>Виберіть культуру</option><option value="melon">Кавун</option><option value="baklajan">Баклажан</option><option value="boby">Боби</option><option value="goroh">Горох</option><option value="dinja">Диня</option><option value="kabachok">Кабачок</option><option value="belokochan">Капуста Білокачанна</option><option value="krasnokochan">Капуста Червонокачанна</option><option value="cvetnaja">Капуста Цвітна</option><option value="brusel">Капуста Брюсельска</option><option value="savoy">Капуста Савойська</option><option value="kolrab">Капуста Кольрабі</option><option value="brokkol">Капуста Брокколі</option><option value="kitay">Капуста Китайська</option><option value="pekinka">Капуста Пекинська</option><option value="luk-rep">Цибуля ріпчаста</option><option value="luk-batun">Цибуля Батун</option><option value="luk-porey">Цибуля Порей</option><option value="luk-kross">Зелена Цибуля</option><option value="morkov">Морква</option><option value="ogurec">Огірок</option><option value="patison">Патисон</option><option value="petrushka">Петрушка</option><option value="perec">Перець</option><option value="redis">Редис</option><option value="redka">Редька</option><option value="repa">Ріпа</option><option value="salat">Салат</option><option value="svekla">Буряк</option><option value="selderey-listovoy">Селера листова</option><option value="selderey-kornevoy">Селера коренева</option><option value="tomat">Помідор</option><option value="tikva">Тиква</option><option value="ukrop">Кріп</option><option value="fasol">Квасоля</option><option value="sparga">Спаржа</option><option value="kukuruza-saharnaya">Кукурудза сахарна</option><option value="kukuruza-super">Кукурудза суперсолодка</option><option value="shpinat">Шпинат</option><option value="artishok">Артишок</option><option value="pasternak">Пастернак</option><option value="estragon">Эстрагон</option><option value="reven">Ревень</option><option value="shavel">Щавель</option> </select></div></div></div><div class="calc-item"><label>Виберіть тип даних який відомий</label><div class="calc-select"><select name="what_count"><option value="sht-ga">Площа, кв.м.</option><option value="sht-ar">Насіння, гр.</option><option value="sht-mkv">Насіння, шт.</option> </select></div></div><div class="calc-item"><label for="weight">Введіть значення</label><div class="input-group spinner"><span class="btn btn-default" type="button">-</span> <input id="area" class="form-control" type="text" value="1" /> <span class="btn btn-default" type="button">+</span></div></div> <button class="submitCalc">Порахувати</button></div><div class="col-md-6"><div class="calcResult">Результат</div></div></div></div></div></div></section>
+
+
+<section class="row">
+<form>
+<div class="form-group">
+    <label for="inputName">Ім'я</label>
+    <input type="text" class="form-control" id="inputName" placeholder="FirstName">
+  </div>
+<div class="form-group">
+    <label for="inputSurname">Прізвище</label>
+    <input type="text" class="form-control" id="inputSurname" placeholder="LastName">
+  </div>
+    <div class="form-group">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="inputPassword4">Номер телефона</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="">
+    </div>
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Оплата</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>готівка</option>
+      <option>картка</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Пункт доставки</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <button type="submit" class="btn btn-primary">Підвердити замовлення</button>
+</form>
+</section>
+</div>
+<div class="col-md-4 col-lg-2 navbar-container bg-primary">
+                <nav class="navbar navbar-expand-md navbar-dark">
+                    <a class="navbar-brand font-weight-bold" href="#">Веб-Аграрій</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <!-- Вертикальное меню -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#link-1">Про нас</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#basket">Кошик</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#link-3">Агрокалькулятор</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#link-4">Додаткові послуги</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</main>
 </body>
 </html>
