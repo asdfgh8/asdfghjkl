@@ -1,6 +1,6 @@
-.opys {
-    display: none;
-}
+#tovar {display: block;}
+a:hover {cursor: pointer;}
+.rowsect, .opys {display: none;}
 .elem {
 display: block;
     float: left;
@@ -32,7 +32,7 @@ color: red;
 font-weight: bold;
 font-size: 25px;
 }
-div:hover .opys{
+.elem:hover .opys{
     display: block;
 }
 #basket {
