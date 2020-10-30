@@ -1,6 +1,8 @@
+/* Відображення стартової сторінки */
 #tovar {display: block;}
 a:hover {cursor: pointer;}
 .rowsect, .opys {display: none;}
+/* Стилі для блоків з продуктами */
 .elem {
 display: block;
     float: left;
@@ -10,6 +12,7 @@ border-radius: 5px;
     margin: 10px;
 padding: 15px;
     }
+/* Стилі для зображень */
 img {
 display: block;
     margin: auto;
@@ -18,44 +21,23 @@ display: block;
     display: inline;
 margin-left: 85%;
     }
+/* Стилі для назв продуктів*/
     .nazva {
 color: #669AE1;
-text-decoration: underline;
-font-size: 20px;
+font-size: 22px;
 }
+/* Стилі для назв категорій */
 .categorie {
 color: #B3B8C0;
 font-size: small;
 }
+/* Стилі для ціни */
 .price {
 color: red;
 font-weight: bold;
 font-size: 25px;
 }
+/* Відображення опису товару при наведенні на нього */
 .elem:hover .opys{
     display: block;
-}
-#basket {
-display: none;
-position: fixed;
-top:0;
-left:0;
-width: 100vw;
-height: 100vh;
-}
-#basket a{
-float: right;
-margin: 5px 20px;
-}
-#basket img {
-position: fixed;
-top: 250px;
-left: 500px;
-width: 500px;
-height: 300px;
-}
-#basket:target, #caulator:target {
-display: block;
-border: 2px solid #D4D4D4;
-background-color: rgba(229, 238, 204, 0.7);
 }
