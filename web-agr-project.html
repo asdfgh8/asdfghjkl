@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Веб-Аграрій</title>
+<!-- Підключення файлів -->
  <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" type="text/css" href="./fonts.css">
-<link rel="stylesheet" 
-
-href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Popper JS -->
@@ -18,6 +17,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="myscript.js"></script>
+<!-- Стилізація панелі меню -->
 <style>
         @media (min-width: 768px) {
             .navbar-container {
@@ -48,312 +48,193 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
+<!-- Верхня панель -->
 <header>
 <nav class="navbar navbar-expand-md bg-primary">
-                    <a class="navbar-brand font-weight-bold  text-light mx-auto" onclick="openTab
-
-(event, 'tovar')">Веб-Аграрій</a></nav>
+                    <a class="navbar-brand font-weight-bold  text-light mx-auto" onclick="openTab(event, 'tovar')">Веб-Аграрій</a></nav>
 </header>
 <main>
 <div class="container-fluid">
       <div class="row">
+<!-- Колонка з основним контекстом сторінки -->
             <div class="col-md-8 col-lg-10 content-container" style="background-color: #e3f2fd">
+<!-- Секція з елементами домашньої сторінки-->
 <section class="rowsect" id="tovar">
-<div class="col-sm-10 mx-auto m-4 p-4 font-italic text-center font-weight-bold">
+<div class="col-sm-10 mx-auto m-4 p-4 font-italic text-center">
+<!-- Блоки з категоріями товарів -->
 <div class="elem">
-        <img src="" alt="" width="150" height="200px">
-        <a class="btn btn-primary" onclick="openTab(event, 'posivmater')" role="button" m-1 p-
-
-1>Посівний матеріал</a>
+        <img src="img/typescerealslegumescloseup.jpg" alt="" width="300" height="200px">
+        <a class="btn btn-primary  font-weight-bold" onclick="openTab(event, 'posivmater')" role="button">Посівний матеріал</a>
     </div>
 <div class="elem">
-        <img src="" alt="" width="150" height="200px">
-        <a class="btn btn-primary" onclick="openTab(event, 'gardtools')" role="button" m-1 p-
-
-1>Інструменти для саду та городу</a>
+        <img src="img/setbeschneidengarten.jpg" alt="" width="300" height="200px">
+        <a class="btn btn-primary  font-weight-bold" onclick="openTab(event, 'gardtools')" role="button">Інструменти для саду та городу</a>
     </div>
 <div class="elem">
-        <img src="" alt="" width="150" height="200px">
-        <a class="btn btn-primary" onclick="openTab(event, 'plantprotect')" role="button" m-1 p-
-
-1>Захист рослин</a>
-    </div></div>
+        <img src="img/inecticide.jpg" alt="" width="300" height="200px">
+        <a class="btn btn-primary font-weight-bold" onclick="openTab(event, 'plantprotect')" role="button">Захист рослин</a>
+     </div>
+   </div>
 </section>
-
+<!-- Категорія посівні матеріали-->
 <section class="rowsect" id="posivmater">
-    <div class="elem">
+<!-- Блоки з товарами -->
+    <div class="elem" id="corn">
         <img src="" alt="" width="150" height="200px">
-        <span class="nazva">Насіння кукурудзи ДК Велес</span>
-        <span class="categorie">Посівний матеріал</span>
-        <span class="price"><span id="prce">700</span> грн/міш.</span>
-        <span class="opys">Гібрид кукурудзи ДК Велес - це середньорання кукурудза з ФАО 270. 
-
-Характеризується стійкістю до посушливих умов регіонів та холоду, високою врожайністю. 
-
-Кукурудза може досягати висоти 230-240 см. Качан при цьому кріпиться на висоті 85-95 
-
-сантиметрів.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+        <div><span class="nazva">Насіння кукурудзи ДК Велес</span></div>
+        <div><span class="categorie">Посівний матеріал</span></div>
+        <div><span class="price"><span class="prce">700</span> грн/міш.</span></div>
+        <div><span class="opys">Гібрид кукурудзи ДК Велес - це середньорання кукурудза з ФАО 270. Характеризується стійкістю до посушливих умов регіонів та холоду, високою врожайністю. Кукурудза може досягати висоти 230-240 см. Качан при цьому кріпиться на висоті 85-95 сантиметрів.</span></div>
+<!-- Кнопка для розміщення продукту в кошику-->
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#corn .prce').text(); var name = $('#corn .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-    <div class="elem">
+    <div class="elem" id="beet">
         <img src="" alt="" width="150" height="200px">
-        <span class="nazva">Буряк столовий Бордо</span>
-        <span class="categorie">Посівний матеріал</span>
-        <span class="price"><span id="prce">150</span> грн/кг</span>
-        <span class="opys">Буряк середньостиглого сорту. Коренеплоди округлої форми, їх 
-
-середня маса 250 - 500 г. Вибагливий до родючості і вологості ґрунту. Сходи не переносять 
-
-заморозків. При догляді за посівами головне ― боротьба зі шкідниками й буp'янами протягом 
-
-усього часу.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+        <div><span class="nazva">Буряк столовий Бордо</span></div>
+        <div><span class="categorie">Посівний матеріал</span></div>
+        <div><span class="price"><span class="prce">150</span> грн/кг</span></div>
+        <div><span class="opys">Буряк середньостиглого сорту. Коренеплоди округлої форми, їх середня маса 250 - 500 г. Вибагливий до родючості і вологості ґрунту. Сходи не переносять заморозків. При догляді за посівами головне ― боротьба зі шкідниками й буp'янами протягом усього часу.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#beet .prce').text(); var name = $('#beet .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-    <div class="elem">
-        <img src="" alt="" width="150" height="200px">
-        <span class="nazva">Соняшник ЛГ5485</span>
-        <span class="categorie">Посівний матеріал</span>
-        <span class="price"><span id="prce">1700</span> грн/міш.</span>
-        <span class="opys">Вробник Лімагрейн. Мішок 150 тис. насінин. Середня висота рослини : 
-
-160 см. Не рекомендований для лісостепу та степу. Високоврожайний і стабільний з високим 
-
-вмістом олії. Стійкий до нових рас несправжньої борошнистої роси.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+    <div class="elem" id="sunflower">
+<img src="" alt="" width="150" height="200px">
+        <div><span class="nazva">Соняшник ЛГ5485</span></div>
+        <div><span class="categorie">Посівний матеріал</span></div>
+        <div><span class="price"><span class="prce">1700</span> грн/міш.</span></div>
+        <div><span class="opys">Вробник Лімагрейн. Мішок 150 тис. насінин. Середня висота рослини : 160 см. Не рекомендований для лісостепу та степу. Високоврожайний і стабільний з високим вмістом олії. Стійкий до нових рас несправжньої борошнистої роси.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#sunflower .prce').text(); var name = $('#sunflower .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
         </div>
-<div class="elem">
-        <img src="" alt="" width="200" height="200px">
-        <span class="nazva">Картопля Арія</span>
-        <span class="categorie">Посівний матеріал</span>
-        <span class="price"><span id="prce">50</span> грн/кг</span>
-        <span class="opys">Ранній сорт картоплі столового призначення. Квітки червоно-
-
-фіолетові. Бульби овальної форми, рожевого кольору. Містить 15,3% крохмалю. Урожайність на 
-
-40-45-й день після сходів становить 22 т/га. Висока польова стійкість проти вірусних 
-
-хвороб.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+<div class="elem" id="potato">
+<img src="" alt="" width="150" height="200px">
+        <div><span class="nazva">Картопля Арія</span></div>
+        <div><span class="categorie">Посівний матеріал</span></div>
+        <div><span class="price"><span class="prce">50</span> грн/кг</span></div>
+        <div><span class="opys">Ранній сорт картоплі столового призначення. Квітки червоно-фіолетові. Бульби овальної форми, рожевого кольору. Містить 15,3% крохмалю. Урожайність на 40-45-й день після сходів становить 22 т/га. Висока польова стійкість проти вірусних хвороб.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#potato .prce').text(); var name = $('#potato .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-<div class="elem">
-        <img src="" alt="" width="150" height="200px">
-        <span class="nazva">Насіння озимої пшениці Скаген</span>
-        <span class="categorie">Посівний матеріал</span>
-        <span class="price"><span id="prce">20</span> грн/кг</span>
-        <span class="opys">Середньопізній сорт озимої пшениці, має дуже високий потенціал 
-
-продуктивності (100 ц/га і більше). Безостий сорт. Висота рослини: 87-91 см. Висока 
-
-посухостійкість та морозостійкість. Строки висіву: початок вересня – кінець жовтня.</p>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
-    </div></section><section class="rowsect" id="plantprotect">
-    <div class="elem">
-        <img src="" alt="" width="150" height="200px">
-        <span class="nazva">Гербіцид Syngenta Аксіал</span>
-        <span class="categorie">Захист рослин</span>
-        <span class="price"><span id="prce">800</span> грн/л</span>
-        <span class="opys">Ефективний проти мітлиці, видів вівсюга та пажитниці. Оптимальна 
-
-температура застосування — від +10 °С до +25 °С. Не рекомендується використовувати препарат 
-
-при різких коливаннях температури протягом дня.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+<div class="elem" id="wheat">
+<img src="" alt="" width="150" height="200px">
+        <div><span class="nazva">Насіння озимої пшениці Скаген</span></div>
+        <div><span class="categorie">Посівний матеріал</span></div>
+        <div><span class="price"><span class="prce">20</span> грн/кг</span></div>
+        <div><span class="opys">Середньопізній сорт озимої пшениці, має дуже високий потенціал продуктивності (100 ц/га і більше). Безостий сорт. Висота рослини: 87-91 см. Висока посухостійкість та морозостійкість. Строки висіву: початок вересня – кінець жовтня.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#wheat .prce').text(); var name = $('#wheat .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
+     </div>
+   </section>
+<!-- Категорія захист рослин-->
+<section class="rowsect" id="plantprotect">
+<!-- Блоки з товарами -->
+    <div class="elem" id="aksial">
+<img src="" alt="" width="150" height="200px">
+        <div><span class="nazva">Гербіцид Syngenta Аксіал</span></div>
+        <div><span class="categorie">Захист рослин</span></div>
+        <div><span class="price"><span class="prce">800</span> грн/л</span></div>
+        <div><span class="opys">Ефективний проти мітлиці, видів вівсюга та пажитниці. Оптимальна температура застосування — від +10 °С до +25 °С. Не рекомендується використовувати препарат при різких коливаннях температури протягом дня.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#aksial .prce').text(); var name = $('#aksial .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-<div class="elem">
-        <img src="" alt="" width="150" height="200px">
-        <span class="nazva">Гербіцид Раундап</span>
-        <span class="categorie">Захист рослин</span>
-        <span class="price"><span id="prce">400</span> грн/л</span>
-        <span class="opys">Засіб повністю знищує однорічні та багаторічні, злакові та дводольні 
-
-бур'яни. Препарат Раундап швидко розчиняється під дією мікроорганізмів як в грунті, так і у 
-
-воді. 20-40мл препарату на 3-4л води (для обробки однієї сотки).</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+<div class="elem" id="raundap">
+<img src="" alt="" width="150" height="200px">
+        <div><span class="nazva">Гербіцид Раундап</span></div>
+        <div><span class="categorie">Захист рослин</span></div>
+        <div><span class="price"><span class="prce">400</span> грн/л</span></div>
+        <div><span class="opys">Засіб повністю знищує однорічні та багаторічні, злакові та дводольні бур'яни. Препарат Раундап швидко розчиняється під дією мікроорганізмів як в грунті, так і у воді. 20-40мл препарату на 3-4л води (для обробки однієї сотки).</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#raundap .prce').text(); var name = $('#raundap .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-<div class="elem">
+<div class="elem" id="kvadris">
         <img src="" alt="" width="150" height="200px">
-        <span class="nazva">Квадріс 250 SC</span>
-        <span class="categorie">Захист рослин</span>
-        <span class="price"><span id="prce">1800</span> грн/л</span>
-        <span class="opys">Фунгіцид із нового класу препаратів — стробілуринів. Захищає овочеві 
-
-культури від усіх основних хвороб: борошнистої роси, фітофторозу, макроспоріозу, 
-
-несправжньої борошнистої роси, плямистостей та ін. Нетоксичний для бджіл, безпечний для 
-
-користувача й довкілля.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+        <div><span class="nazva">Квадріс 250 SC</span></div>
+        <div><span class="categorie">Захист рослин</span></div>
+        <div><span class="price"><span class="prce">1800</span> грн/л</span></div>
+        <div><span class="opys">Фунгіцид із нового класу препаратів — стробілуринів. Захищає овочеві культури від усіх основних хвороб: борошнистої роси, фітофторозу, макроспоріозу, несправжньої борошнистої роси, плямистостей та ін. Нетоксичний для бджіл, безпечний для користувача й довкілля.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#kvadris .prce').text(); var name = $('#kvadris .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-<div class="elem">
+<div class="elem" id="rydomil">
         <img src="" alt="" width="150" height="200px">
-        <span class="nazva">Фунгіцид Ридоміл Голд</span>
-        <span class="categorie">Захист рослин</span>
-        <span class="price"><span id="prce">220</span> грн/кг</span>
-        <span class="opys">Виробник - Syngenta. Є провідним фунгіцидом для боротьби з 
-
-важкими захворюваннями, викликаними грибковими шкідниками. Забезпечує надійний захист від 
-
-хвороб навіть за несприятливих погодних умов. Профілактична та лікувальна дія. Захист нового 
-
-приросту і бульб.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+        <div><span class="nazva">Фунгіцид Ридоміл Голд</span></div>
+        <div><span class="categorie">Захист рослин</span></div>
+        <div><span class="price"><span class="prce">220</span> грн/кг</span></div>
+        <div><span class="opys">Виробник - Syngenta. Є провідним фунгіцидом для боротьби з важкими захворюваннями, викликаними грибковими шкідниками. Забезпечує надійний захист від хвороб навіть за несприятливих погодних умов. Профілактична та лікувальна дія. Захист нового приросту і бульб.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#rydomil .prce').text(); var name = $('#rydomil .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-<div class="elem">
+<div class="elem" id="syneryd">
         <img src="" alt="" width="150" height="200px">
-        <span class="nazva">Інсектицид DEFENDA Синерид</span>
-        <span class="categorie">Захист рослин</span>
-        <span class="price"><span id="prce">700</span> грн/л</span>
-        <span class="opys">Синерид (аналог інсектициду Біскайя) застосовується для контролю 
-
-широкого спектру рівнокрилих, жорсткокрилих та лускокрилих шкідників в посівах ріпаку та 
-
-соняшнику. Не змивається опадами. Норма застосування л/га: 0,3 – 0,4. Форма препарату: 
-
-масляна дисперсія (м.д.).</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
-    </div></section>
+        <div><span class="nazva">Інсектицид DEFENDA Синерид</span></div>
+        <div><span class="categorie">Захист рослин</span></div>
+        <div><span class="price"><span class="prce">700</span> грн/л</span></div>
+        <div><span class="opys">Синерид (аналог інсектициду Біскайя) застосовується для контролю широкого спектру рівнокрилих, жорсткокрилих та лускокрилих шкідників в посівах ріпаку та соняшнику. Не змивається опадами. Норма застосування л/га: 0,3 – 0,4. Форма препарату: масляна дисперсія (м.д.).</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#syneryd .prce').text(); var name = $('#syneryd .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
+     </div>
+   </section>
+<!-- Категорія садові інструменти -->
 <section class="rowsect" id="gardtools">
-    <div class="elem">
+<!-- Блоки з товарами -->
+    <div class="elem" id="secator">
         <img src="" alt="" width="200" height="200px">
-        <span class="nazva">Секатор GREENMILL GR6202</span>
-        <span class="categorie">Інструменти для саду</span>
-        <span class="price"><span id="prce">180</span> грн</span>
-        <span class="opys">Матеріал леза - високоякісна, загартована сталь. Діаметр зрізу - 15 
-
-мм. Матеріал ручки - високоміцний алюмінієвий сплав
-. Ручки прогумовані.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+        <div><span class="nazva">Секатор GREENMILL GR6202</span></div>
+        <div><span class="categorie">Інструменти для саду</span></div>
+        <div><span class="price"><span class="prce">180</span> грн</span></div>
+        <div><span class="opys">Матеріал леза - високоякісна, загартована сталь. Діаметр зрізу - 15 мм. Матеріал ручки - високоміцний алюмінієвий сплав
+. Ручки прогумовані.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#secator .prce').text(); var name = $('#secator .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-<div class="elem">
+<div class="elem" id="agrolife">
         <img src="" alt="" width="200" height="200px">
-        <span class="nazva">Агроволокно Agrolife</span>
-        <span class="categorie">Інструменти для саду</span>
-        <span class="price"><span id="prce">250</span> грн/рулон</span>
-        <span class="opys">Розмір рулона - 1,6 Х 10 м. Сонячне світло, волога і повітря чудово 
-
-проходять крізь нього. Полив рослин можна здійснювати прямо через волокно. Запобігає 
-
-пересиханню ґрунту, захищає від бур'янів.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+        <div><span class="nazva">Агроволокно Agrolife</span></div>
+        <div><span class="categorie">Інструменти для саду</span></div>
+        <div><span class="price"><span class="prce">250</span> грн/рулон</span></div>
+        <div><span class="opys">Розмір рулона - 1,6 Х 10 м. Сонячне світло, волога і повітря чудово проходять крізь нього. Полив рослин можна здійснювати прямо через волокно. Запобігає пересиханню ґрунту, захищає від бур'янів.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#agrolife .prce').text(); var name = $('#agrolife .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-<div class="elem">
+<div class="elem" id="spray">
         <img src="" alt="" width="200" height="200px">
-        <span class="nazva">Акумуляторний обприскувач Foresta</span>
-        <span class="categorie">Інструменти для саду</span>
-        <span class="price"><span id="prce">1000</span> грн.</span>
-        <span class="opys">З баком на 12 літрів здатний працювати 5 годин без перерви завдяки 
-
-акумулятору ємністю 8 А/год. З його допомогою. У комплекті йдуть 5 різних  насадок для 
-
-розпилення рідини, що дозволяє підібрати оптимальний режим обприскування рослин.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+        <div><span class="nazva">Акумуляторний обприскувач Foresta</span></div>
+        <div><span class="categorie">Інструменти для саду</span></div>
+        <div><span class="price"><span class="prce">1000</span> грн.</span></div>
+        <div><span class="opys">З баком на 12 літрів здатний працювати 5 годин без перерви завдяки акумулятору ємністю 8 А/год. З його допомогою. У комплекті йдуть 5 різних  насадок для розпилення рідини, що дозволяє підібрати оптимальний режим обприскування рослин.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#spray .prce').text(); var name = $('#spray .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-<div class="elem">
+<div class="elem" id="funnel">
         <img src="" alt="" width="200" height="200px">
-        <span class="nazva">Лійка оцинкована</span>
-        <span class="categorie">Інструменти для саду</span>
-        <span class="price"><span id="prce">190</span> грн</span>
-        <span class="opys">Об'єм - 10 л, зі знімним розсіювачем. Зручна і легка. Виготовлена з 
-
-оцинкованої сталі.</span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+        <div><span class="nazva">Лійка оцинкована</span></div>
+       <div> <span class="categorie">Інструменти для саду</span></div>
+        <div><span class="price"><span class="prce">190</span> грн</span></div>
+        <div><span class="opys">Об'єм - 10 л, зі знімним розсіювачем. Зручна і легка. Виготовлена з оцинкованої сталі.</span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#funnel .prce').text(); var name = $('#funnel .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
-<div class="elem">
+<div class="elem" id="rake">
         <img src="" alt="" width="200" height="200px">
-        <span class="nazva">Граблі віялові</span>
-        <span class="categorie">Інструменти для саду</span>
-        <span class="price"><span id="prce">150</span> грн/л</span>
-        <span class="opys">Граблі мають 15 круглих, сплюснутих на кінцях зубів, алюмінієвий 
-
-держак завдовжки 1,5 м з гумовою ручкою на кінці. Призначені для збору опалого листя, 
-
-зрізаних гілок, бур'янів, садового сміття. </span>
-<button type="submit" class="btn btn-success font-weight-bold" onclick="openTab(event, 
-
-'basketable')">Придбати</button>
+        <div><span class="nazva">Граблі віялові</span></div>
+       <div> <span class="categorie">Інструменти для саду</span></div>
+        <div><span class="price"><span class="prce">150</span> грн/л</span></div>
+        <div><span class="opys">Граблі мають 15 круглих, сплюснутих на кінцях зубів, алюмінієвий держак завдовжки 1,5 м з гумовою ручкою на кінці. Призначені для збору опалого листя, зрізаних гілок, бур'янів, садового сміття. </span></div>
+<button type="submit" class="btn btn-success font-weight-bold" onclick="var tsina = $('#rake .prce').text(); var name = $('#rake .nazva').text(); addToBasket(event, 'basketable', name, tsina)">Придбати</button>
     </div>
     </section>
 
-
+<!-- Секція з агрокалькулятором -->
 <section class="rowsect" id="calculat">
 <div class="col-sm-8 mx-auto m-4 p-4 bg-light">
-<div style="display: block"><div class="col-md-12"><h5>Агрокалькулятор</h5><div><p>За 
+<div style="display: block"><div class="col-md-12"><h5>Агрокалькулятор</h5><div><p>За допомогою даного калькулятора ви зможете: знаючи площу, м.кв. - визначити кількість необхідного насіння в гр. і шт .; знаючи кількість насіння в гр. або шт. - визначити кількість насіння в шт. або гр. і відповідну площу м.кв.</p>
+<!-- Вибір культури -->
+<div class="row"><div class="col-md-6"><div><div><label for="culture">Виберіть культуру</label><div><select id="culture" name="culture"><option>Виберіть культуру</option><option value="melon">Кавун</option><option value="baklajan">Баклажан</option><option value="boby">Боби</option><option value="goroh">Горох</option><option value="dinja">Диня</option><option value="brokkol">Капуста Брокколі</option><option value="shavel">Щавель</option> </select></div></div></div>
+<!-- Вибір відомого типу даних -->
+<div class="calc-item"><label>Виберіть тип даних, який Вам відомий</label><div class="calc-select"><select name="what_count"><option value="sht-ga">Площа, кв.м.</option><option value="sht-ar">Насіння, гр.</option><option value="sht-mkv">Насіння, шт.</option> </select></div></div><div><label>Введіть значення</label><div><input id="area" class="form-control" type="text" value="1" /></div></div>
+<!-- Кнопка для підрахунку результату --!><button>Порахувати</button></div></div></div></div></div></div>
+</section>
 
-допомогою даного калькулятора ви зможете: знаючи площу, м.кв. - визначити кількість 
-
-необхідного насіння в гр. і шт .; знаючи кількість насіння в гр. або шт. - визначити кількість 
-
-насіння в шт. або гр. і відповідну площу м.кв.</p><div class="row"><div class="col-md-
-
-6"><div><div><label for="culture">Виберіть культуру</label><div><select id="culture" 
-
-name="culture"><option>Виберіть культуру</option><option 
-
-value="melon">Кавун</option><option value="baklajan">Баклажан</option><option 
-
-value="boby">Боби</option><option value="goroh">Горох</option><option 
-
-value="dinja">Диня</option><option value="brokkol">Капуста Брокколі</option><option 
-
-value="shavel">Щавель</option> </select></div></div></div><div class="calc-
-
-item"><label>Виберіть тип даних, який Вам відомий</label><div class="calc-select"><select 
-
-name="what_count"><option value="sht-ga">Площа, кв.м.</option><option value="sht-
-
-ar">Насіння, гр.</option><option value="sht-mkv">Насіння, шт.</option> 
-
-</select></div></div><div><label for="weight">Введіть значення</label><div><input 
-
-id="area" class="form-control" type="text" value="1" /></div></div> 
-
-<button>Порахувати</button></div></div></div></div></div></div></section>
-
-
+<!-- Секція, що містить форму для заповнення -->
 <section class="rowsect" id="anket">
 <div class="col-sm-8 mx-auto m-4 p-4">
+<!-- Анкета на замовлення -->
 <form class="border border-light p-5 bg-primary text-light">
 <div class="form-group">
 <h5 class="text-center m-1 p-1 font-weight-bold">Анкета на замовлення</h5>
     <label for="inputName">Ім'я</label>
-<input class="form-control  m-1 p-1" id="inputName" type="text" minlength="3" maxlength="15" 
-
-placeholder="ім'я">
+<input class="form-control  m-1 p-1" id="inputName" type="text" minlength="3" maxlength="15" placeholder="ім'я">
   </div>
 <div class="form-group">
     <label for="inputSurname">Прізвище</label>
-    <input class="form-control m-1 p-1" id="inputSurname" type="text" minlength="3" 
-
-maxlength="15" placeholder="прізвище">
+    <input class="form-control m-1 p-1" id="inputSurname" type="text" minlength="3" maxlength="15" placeholder="прізвище">
   </div>
     <div class="form-group">
       <label for="inputEmail">Електронна пошта</label>
@@ -361,9 +242,7 @@ maxlength="15" placeholder="прізвище">
     </div>
     <div class="form-group">
       <label for="inputPhoneNumber">Номер телефона</label>
-<input type="tel" class="form-control m-1 p-1" id="inputPhoneNumber" pattern="0[0-9]{2}-[0-9]
-
-{3}-[0-9]{2}-[0-9]{2}" placeholder="056-356-45-56">
+<input type="tel" class="form-control m-1 p-1" id="inputPhoneNumber" pattern="0[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="056-356-45-56">
     </div>
 <div class="form-group">
     <label for="exampleFormControlSelect1">Оплата</label>
@@ -374,118 +253,87 @@ maxlength="15" placeholder="прізвище">
   </div>
   <div class="form-group">
     <label for="inputAddress">Пункт доставки</label>
-    <input type="text" class="form-control m-1 p-1" id="inputAddress" placeholder="1234 Main 
-
-St">
+    <input type="text" class="form-control m-1 p-1" id="inputAddress" placeholder="1234 Main St">
   </div>
-<p class="font-weight-bold m-1 p-2">Загальна сума покупки:  грн.</p>
-  <button type="submit" class="btn btn-success m-1 font-weight-bold">Підтвердити 
-
-замовлення</button>
+  <button type="submit" class="btn btn-success m-1 font-weight-bold">Підтвердити замовлення</button>
 </form>
 </div>
 </section>
 
-
+<!-- Секція з інформацією про веб-магазин -->
 <section class="rowsect" id="aboutus">
 <div class="col-sm-8 mx-auto m-4 p-4">
-<p>На сайті Веб-Аграрій можна знайти різні товари для саду та городу, у тому числі мінеральні 
-
-добрива, посівний матеріал, різноманітні інструменти. Наявний агрокалькулятор, за допомогою 
-
-якого можна точно розрахувати необхідну кількість посівного матеріалу. Також надається 
-
-можливість порадитися зі спеціалістами з приводу вибору того чи іншого товару, викликати 
-
-майстра інструментів для саду.</p></div>
+<div><p>На сайті Веб-Аграрій можна знайти різні товари для саду та городу, у тому числі мінеральні добрива, посівний матеріал, різноманітні інструменти. Наявний агрокалькулятор, за допомогою якого можна точно розрахувати необхідну кількість посівного матеріалу. Також надається можливість порадитися зі спеціалістами з приводу вибору того чи іншого товару, викликати майстра інструментів для саду.</p></div>
+</div>
 </section>
 
+<!-- Секція додаткові послуги -->
 <section class="rowsect" id="callspecialist">
 <div class="col-sm-8 mx-auto m-4 p-4">
-<p class="font-weight-bold">Виклик майстра техніки для саду і городу:</p>
-<p>+38(098) 876 54 32</p>
-<p class="font-weight-bold">Виклик агронома:</p>
-<p>+38(089) 123 45 67</p>
+<!-- Розміщення контактних даних -->
+<div class="font-weight-bold"><span>Виклик майстра техніки для саду і городу:</span></div>
+<div><span>+38(098) 876 54 32</span></div>
+<div class="font-weight-bold"><span>Виклик агронома:</span></div>
+<div><span>+38(089) 123 45 67</span></div>
+<!-- Текстове поле та кнопка для вводу відгуку користувача -->
 <form>
 <div class="form-group">
     <label for="FormTextarea" class="font-weight-bold">Ваш коментар</label>
-<textarea class="form-control rounded-3" id="FormTextarea" rows="3" placeholder="Залиште 
-
-повідомлення..."></textarea>
+<textarea class="form-control rounded-3" id="FormTextarea" rows="3" placeholder="Залиште повідомлення..."></textarea>
   </div>
 <button type="submit" class="btn btn-success m-1 font-weight-bold">Зберегти</button>
 </form>
-
 </div>
 </section>
 
+<!-- Секція кошик користувача -->
 <section class="rowsect" id="basketable">
 <div class="col-md-8 mx-auto p-4">
+<!-- Кошик представлений таблицею з поями назви товарів, ціни та кількістю-->
+<!-- Дані в кошик додаються автоматично при натисакнні кнопки Придбати піл описом товару -->
 <table class="table text-center table-responsive">
   <thead>
     <tr class="text-uppercase">
       <th scope="col">Найменування</th>
       <th scope="col">Ціна за одиницю</th>
-      <th scope="col">Разом</th>
       <th scope="col">Кількість</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
+  <tbody id="purchase">
   </tbody>
+<!-- "Футер" таблиці із загальною сумою пкупки та кнопками для переходу до вибору товару чи оформлення замовлення-->
 <tfoot>
 <tr>
       <th>
       </th>
-      <th ></th>
       <th >Всього:</th>
-<th ></th>
+<th id="zagsum"></th>
     </tr>
     <tr>
       <th>
-      <button type="submit" class="btn btn-primary m-1 font-weight-bold" onclick="openTab(event, 
-
-'tovar')">Продовжити покупку</button>
+      <button type="submit" class="btn btn-primary m-1 font-weight-bold" onclick="openTab(event, 'tovar')">Продовжити покупку</button>
       </th>
       <th></th>
-<th></th>
       <th>
-<button type="submit" class="btn btn-primary m-1 font-weight-bold" onclick="openTab(event, 
-
-'anket')">Оформити замовлення</button>
+<button type="submit" class="btn btn-primary m-1 font-weight-bold" onclick="openTab(event, 'anket')">Оформити замовлення</button>
       </th>
     </tr>
   </tfoot>
 </table>
 </div>
 </section>
-
-
 </div>
 
+<!-- Колонка з бічною панеллю меню -->
 <div class="col-md-4 col-lg-2 navbar-container bg-primary">
                 <nav class="navbar navbar-expand-md navbar-dark">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-
-
-target="#navbar"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 
-
-navigation">
+<!-- Кнопка меню для мобільної версії -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+<!-- Зміст меню -->
                     <div class="collapse navbar-collapse" id="navbar">
-                        <!-- Вертикальное меню -->
+                        <!-- Вертикальне меню -->
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" onclick="openTab(event, 'aboutus')">Про нас</a>
@@ -494,14 +342,10 @@ navigation">
                                 <a class="nav-link" onclick="openTab(event, 'basketable')">Кошик</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" onclick="openTab(event, 
-
-'calculat')">Агрокалькулятор</a>
+                                <a class="nav-link" onclick="openTab(event, 'calculat')">Агрокалькулятор</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" onclick="openTab(event, 'callspecialist')">Додаткові 
-
-послуги</a>
+                                <a class="nav-link" onclick="openTab(event, 'callspecialist')">Додаткові послуги</a>
                             </li>
                         </ul>
                     </div>
