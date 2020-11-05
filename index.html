@@ -255,6 +255,7 @@
     <label for="inputAddress">Пункт доставки</label>
     <input type="text" class="form-control m-1 p-1" id="inputAddress" placeholder="1234 Main St">
   </div>
+<div id="totals" class="m-1 font-weight-bold"></div>
   <button type="submit" class="btn btn-success m-1 font-weight-bold">Підтвердити замовлення</button>
 </form>
 </div>
@@ -288,7 +289,7 @@
 
 <!-- Секція кошик користувача -->
 <section class="rowsect" id="basketable">
-<div class="col-md-8 mx-auto p-4">
+<div class="col-md-10 mx-auto p-4">
 <!-- Кошик представлений таблицею з поями назви товарів, ціни та кількістю-->
 <!-- Дані в кошик додаються автоматично при натисакнні кнопки Придбати піл описом товару -->
 <table class="table text-center table-responsive">
@@ -296,6 +297,7 @@
     <tr class="text-uppercase">
       <th scope="col">Найменування</th>
       <th scope="col">Ціна за одиницю</th>
+<th scope="col">Разом</th>
       <th scope="col">Кількість</th>
     </tr>
   </thead>
@@ -308,12 +310,14 @@
       </th>
       <th >Всього:</th>
 <th id="zagsum"></th>
+<th></th>
     </tr>
     <tr>
       <th>
       <button type="submit" class="btn btn-primary m-1 font-weight-bold" onclick="openTab(event, 'tovar')">Продовжити покупку</button>
       </th>
       <th></th>
+<th></th>
       <th>
 <button type="submit" class="btn btn-primary m-1 font-weight-bold" onclick="openTab(event, 'anket')">Оформити замовлення</button>
       </th>
